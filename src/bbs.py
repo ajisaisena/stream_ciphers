@@ -19,12 +19,12 @@ def bbs(p, q, s, rounds):
     result = []
     if p % 4 != 3 or q % 4 != 3:
         raise ValueError("You're trying to input illegal params: p or q")
-    n = p*q
+    n = p * q
     if gcd(s, n) != 1:
         raise ValueError("You're trying to input illegal param: s")
-    x = s**2 % n
+    x = s ** 2 % n
     for i in range(rounds):
-        x = x**2 % n
+        x = x ** 2 % n
         result.append(x % 2)
     return result
 
